@@ -1,0 +1,11 @@
+#!/bin/bash
+
+name=$1
+sudo docker run \
+	--add-host master:172.17.0.2 \
+	--add-host node1:172.17.0.3 \
+	--add-host node2:172.17.0.4 \
+	--add-host node3:172.17.0.5 \
+	--hostname $name \
+	--name $name \
+	-it hadoop_image /bin/bash
